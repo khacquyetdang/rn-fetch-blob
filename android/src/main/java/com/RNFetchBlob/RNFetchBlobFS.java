@@ -10,6 +10,8 @@ import android.os.StatFs;
 import android.os.SystemClock;
 import android.util.Base64;
 
+import com.RNFetchBlob.Utils.FileProvider;
+import com.RNFetchBlob.Utils.FileUtils;
 import com.RNFetchBlob.Utils.PathResolver;
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.Callback;
@@ -1147,7 +1149,7 @@ class RNFetchBlobFS {
             return path;
         }
         else
-            return PathResolver.getRealPathFromURI(RNFetchBlob.RCTContext, uri);
+            return FileUtils.getPath(RNFetchBlob.RCTContext, uri);
     }
 
 }
